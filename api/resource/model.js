@@ -9,7 +9,6 @@ async function getResources() {
 
 async function addResources(body) {
   const { resource_name, resource_description } = body;
-  console.log({ resource_name, resource_description });
   const returning = await db("resources").insert({
     resource_name,
     resource_description,

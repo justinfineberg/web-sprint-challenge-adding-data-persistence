@@ -8,7 +8,6 @@ async function getProjects(){
 }
 
 async function addProject(body){
-    console.log('hddere')
     const { project_name, project_description, project_completed } = body;
     const returning = await db('projects').insert(body)
     console.log(returning)

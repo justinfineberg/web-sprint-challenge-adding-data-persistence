@@ -8,4 +8,11 @@ async function getTasks(){
     
 }
 
-module.exports = {getTasks}
+async function newTask(body){
+    console.log('herere')
+  const returning = await db('tasks').insert(body)
+  const answer = await db('tasks').where("task_id", returning[0])
+  return answer
+}
+
+module.exports = {getTasks, newTask }
